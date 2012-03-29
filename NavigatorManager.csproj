@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <ProjectGuid>{33B1240C-F0F7-4396-9776-CA17F3538936}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyName>NavigatorManager</AssemblyName>
+  </PropertyGroup>
+  <Import Project="IHIManagerPlugin.targets" />
+  <ItemGroup>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\..\..\..\Libs\NHibernate\3.1.0\Required_Bins\NHibernate.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="Messages\MOwnRoomListing.cs" />
+    <Compile Include="Messages\MRecommendedRoomListing.cs" />
+    <Compile Include="Messages\MUsableGuestCategoryListing.cs" />
+    <Compile Include="Messages\MNavigatorCategoryListing.cs" />
+    <Compile Include="PacketHandlers.cs" />
+    <Compile Include="Navigator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Database Structures\DB-Main\DB-Main.csproj">
+      <Project>{62AF647E-C9BC-4E05-8A91-B044074A3147}</Project>
+      <Name>DB-Main</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Plugins\LIB-Navigator\LIB-Navigator.csproj">
+      <Project>{9BF21604-CA29-4F2E-A666-C4B4EB5BF1D1}</Project>
+      <Name>LIB-Navigator</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Server\Server.csproj">
+      <Project>{DAE1BFF3-35B4-493F-B261-0F050DE43832}</Project>
+      <Name>Server</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
